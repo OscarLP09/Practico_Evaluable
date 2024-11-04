@@ -1,16 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.practico_evaluable.HelloController">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.practico_evaluable.HelloController">
+   <children>
+      <TableView layoutY="75.0" prefHeight="294.0" prefWidth="364.0">
+        <columns>
+          <TableColumn prefWidth="45.5999755859375" text="Correo" />
+          <TableColumn prefWidth="68.0" text="Plataforma" />
+            <TableColumn prefWidth="63.20001220703125" text="is_Admin" />
+            <TableColumn prefWidth="103.199951171875" text="Version Software" />
+            <TableColumn prefWidth="84.0" text="Time Created" />
+        </columns>
+      </TableView>
+      <AnchorPane prefHeight="76.0" prefWidth="520.0" style="-fx-background-color: #E96151;">
+         <children>
+            <Label layoutX="175.0" layoutY="15.0" text="USUARIOS" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="364.0" layoutY="74.0" prefHeight="325.0" prefWidth="158.0">
+         <children>
+            <BorderPane layoutY="1.0" prefHeight="50.0" prefWidth="156.0">
+               <center>
+                  <Label prefHeight="51.0" prefWidth="129.0" text="AÑADIR USUARIO" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </center>
+            </BorderPane>
+            <Label layoutX="15.0" layoutY="51.0" text="Correo:" />
+            <TextField fx:id="emailTxt" layoutX="14.0" layoutY="69.0" prefHeight="26.0" prefWidth="136.0" />
+            <Label layoutX="12.0" layoutY="107.0" text="Plataforma:" />
+            <ChoiceBox fx:id="plataformaChoice" layoutX="14.0" layoutY="125.0" prefHeight="26.0" prefWidth="136.0" />
+            <Label layoutX="13.0" layoutY="163.0" text="Versión:" />
+            <Spinner fx:id="versionSpinner" layoutX="11.0" layoutY="181.0" prefHeight="26.0" prefWidth="136.0" />
+            <CheckBox fx:id="is_adminCheck" layoutX="12.0" layoutY="230.0" mnemonicParsing="false" text="Es Administrador" />
+            <Button fx:id="añadirBtn" layoutX="16.0" layoutY="270.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" text="Añadir Usuario" />
+         </children>
+      </AnchorPane>
+   </children>
+</fx:root>
