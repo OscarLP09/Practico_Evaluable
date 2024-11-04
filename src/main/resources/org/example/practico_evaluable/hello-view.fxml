@@ -12,17 +12,16 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="520.0" type="AnchorPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.practico_evaluable.HelloController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.practico_evaluable.HelloController" prefHeight="400.0" prefWidth="520.0">
    <children>
       <TableView layoutY="75.0" prefHeight="294.0" prefWidth="364.0">
-        <columns>
-          <TableColumn prefWidth="45.5999755859375" text="Correo" />
-          <TableColumn prefWidth="68.0" text="Plataforma" />
+         <columns>
+            <TableColumn prefWidth="45.5999755859375" text="Correo" />
+            <TableColumn prefWidth="68.0" text="Plataforma" />
             <TableColumn prefWidth="63.20001220703125" text="is_Admin" />
             <TableColumn prefWidth="103.199951171875" text="Version Software" />
             <TableColumn prefWidth="84.0" text="Time Created" />
-        </columns>
+         </columns>
       </TableView>
       <AnchorPane prefHeight="76.0" prefWidth="520.0" style="-fx-background-color: #E96151;">
          <children>
@@ -50,9 +49,9 @@
             <ChoiceBox fx:id="plataformaChoice" layoutX="14.0" layoutY="125.0" prefHeight="26.0" prefWidth="136.0" />
             <Label layoutX="13.0" layoutY="163.0" text="Versión:" />
             <Spinner fx:id="versionSpinner" layoutX="11.0" layoutY="181.0" prefHeight="26.0" prefWidth="136.0" />
-            <CheckBox fx:id="is_adminCheck" layoutX="12.0" layoutY="230.0" mnemonicParsing="false" text="Es Administrador" />
-            <Button fx:id="añadirBtn" layoutX="16.0" layoutY="270.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" text="Añadir Usuario" />
+            <CheckBox fx:id="is_Admin" layoutX="12.0" layoutY="230.0" mnemonicParsing="false" text="Es Administrador" />
+            <Button fx:id="añadirBtn" layoutX="16.0" layoutY="270.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="136.0" text="Añadir Usuario" onAction="#añadirUsuario" />
          </children>
       </AnchorPane>
    </children>
-</fx:root>
+</AnchorPane>
