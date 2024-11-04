@@ -1,26 +1,37 @@
 package org.example.practico_evaluable.models;
 
-import lombok.Data;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
-import static java.time.LocalTime.now;
-
-@Data
 public class User {
-    public String email;
-    public String plataformaChoice;
-    public boolean is_admin;
-    public Integer version_spinner;
+    private final SimpleStringProperty email;
+    private final SimpleStringProperty platform;
+    private final SimpleStringProperty admin;
+    private final SimpleStringProperty version;
+    private final SimpleStringProperty dateTime;
 
+    public User(String email, String platform, String admin, String version, String dateTime) {
+        this.email = new SimpleStringProperty(email);
+        this.platform = new SimpleStringProperty(platform);
+        this.admin = new SimpleStringProperty(admin);
+        this.version = new SimpleStringProperty(version);
+        this.dateTime = new SimpleStringProperty(dateTime);
+    }
+
+    public StringProperty emailProperty() { return email; }
+    public StringProperty platformProperty() { return platform; }
+    public StringProperty adminProperty() { return admin; }
+    public StringProperty versionProperty() { return version; }
+    public StringProperty dateTimeProperty() { return dateTime; }
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "correo='" + email + '\'' +
-                ", plataforma='" + plataformaChoice + '\'' +
-                ", esAdmin=" + is_admin +
-                ", versionSoftware=" + version_spinner +
-                ", fechaCreacion=" + now() +
+        return "User{" +
+                "email='" + email.get() + '\'' +
+                ", platform='" + platform.get() + '\'' +
+                ", admin='" + admin.get() + '\'' +
+                ", version='" + version.get() + '\'' +
+                ", dateTime='" + dateTime.get() + '\'' +
                 '}';
     }
-
 }

@@ -14,13 +14,13 @@
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.practico_evaluable.HelloController" prefHeight="400.0" prefWidth="520.0">
    <children>
-      <TableView layoutY="75.0" prefHeight="294.0" prefWidth="364.0">
+      <TableView fx:id="userTable" layoutY="75.0" prefHeight="294.0" prefWidth="364.0">
          <columns>
-            <TableColumn prefWidth="45.5999755859375" text="Correo" />
-            <TableColumn prefWidth="68.0" text="Plataforma" />
-            <TableColumn prefWidth="63.20001220703125" text="is_Admin" />
-            <TableColumn prefWidth="103.199951171875" text="Version Software" />
-            <TableColumn prefWidth="84.0" text="Time Created" />
+            <TableColumn fx:id="emailColumn" prefWidth="45.5999755859375" text="Correo" />
+            <TableColumn fx:id="platformColumn" prefWidth="68.0" text="Plataforma" />
+            <TableColumn fx:id="adminColumn" prefWidth="63.20001220703125" text="is_Admin" />
+            <TableColumn fx:id="versionColumn" prefWidth="103.199951171875" text="Version Software" />
+            <TableColumn fx:id="dateTimeColumn" prefWidth="84.0" text="Time Created" />
          </columns>
       </TableView>
       <AnchorPane prefHeight="76.0" prefWidth="520.0" style="-fx-background-color: #E96151;">
