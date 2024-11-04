@@ -11,6 +11,9 @@ import org.example.practico_evaluable.models.User;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Controlador para la aplicación de gestión de usuarios.
+ */
 public class HelloController {
 
     @FXML
@@ -40,6 +43,9 @@ public class HelloController {
 
     private ObservableList<User> userList;
 
+    /**
+     * Inicializa el controlador. Configura las columnas de la tabla y llena los elementos iniciales.
+     */
     @FXML
     private void initialize() {
         emailColumn.setCellValueFactory(data -> data.getValue().emailProperty());
@@ -55,6 +61,10 @@ public class HelloController {
         versionSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 5, 1));
     }
 
+    /**
+     * Añade un nuevo usuario a la tabla después de validar los campos del formulario.
+     * Muestra una alerta si algún campo está vacío.
+     */
     @FXML
     private void añadirUsuario() {
         if (emailTxt.getText().isEmpty() || plataformaChoice.getValue() == null ||
@@ -78,6 +88,9 @@ public class HelloController {
         clearForm();
     }
 
+    /**
+     * Limpia los campos del formulario.
+     */
     private void clearForm() {
         emailTxt.clear();
         plataformaChoice.setValue(null);
@@ -85,6 +98,9 @@ public class HelloController {
         is_Admin.setSelected(false);
     }
 
+    /**
+     * Vacía la tabla de usuarios después de una confirmación del usuario.
+     */
     @FXML
     private void limpiarTabla() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -97,6 +113,12 @@ public class HelloController {
         }
     }
 
+    /**
+     * Muestra una alerta con un mensaje especificado.
+     *
+     * @param title   Título de la alerta.
+     * @param message Mensaje de la alerta.
+     */
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
